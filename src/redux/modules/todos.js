@@ -39,13 +39,7 @@ export const getTodoByID = (payload) => {
 
 // initial state
 const initialState = {
-  toDoArr: [   
-     {
-    id: "1",
-    title: "리액트",
-    body: "리액트를 배워봅시다",
-    isDone: false,
-  },]
+  toDoArr: []
 };
 
 const todos = (state = initialState, action) => {

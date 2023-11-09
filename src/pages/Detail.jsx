@@ -8,7 +8,6 @@ const Detail = () => {
 
   const todo = useSelector((state) => state.todos.toDoArr);
 
-
   const params = useParams();
   const navigate = useNavigate();
   const detailedInfo = todo.find((item) => parseInt(params.id) === item.id)

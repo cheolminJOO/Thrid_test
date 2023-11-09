@@ -59,21 +59,21 @@ const List = () => {
       </StListWrapper>
       <h2 className="list-title">Done..! 🎉</h2>
       <StListWrapper>
-        {todos.map((item, index) => {
-          if (item.isDone) {
+        {todos.map((todo, index) => {
+          if (todo.isDone) {
             return (
-              <StTodoContainer key={item.id}>
-                <StLink to={`/${index}`} key={item.id}>
+              <StTodoContainer key={todo.id}>
+                <StLink to={`/${index}`} key={todo.id}>
                   <div>상세보기</div>
                 </StLink>
                 <div>
-                  <h2 className="todo-title">{item.title}</h2>
-                  <div>{item.body}</div>
+                  <h2 className="todo-title">{todo.title}</h2>
+                  <div>{todo.body}</div>
                 </div>
                 <StDialogFooter>
                   <StButton
                     borderColor="red"
-                    onClick={() => onDeleteTodo(item.id)}
+                    onClick={() => onDeleteTodo(todo.id)}
                   >
                     삭제하기
                   </StButton>
@@ -81,7 +81,7 @@ const List = () => {
                     borderColor="green"
                     onClick={onToggleStatusTodo}
                   >
-                    {item.isDone ? "취소!" : "완료!"}
+                    {todo.isDone ? "취소!" : "완료!"}
                   </StButton>
                 </StDialogFooter>
               </StTodoContainer>

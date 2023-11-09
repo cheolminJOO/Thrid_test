@@ -8,7 +8,7 @@ const Form = () => {
   const toDoArr = useSelector((state) => state.todos.toDoArr)
   const [title,setTitle] = useState('')
   const [body, setBody] = useState('')
-
+  const ReduxCounter = useSelector((state) => state.counterSlice.counter);
   const onChangeTitle = (event) => {
     setTitle(event.target.value)
   }
@@ -24,7 +24,7 @@ const Form = () => {
     if (!title && !body) return;
     
     const newTodo = ({
-      id: toDoArr.length +1,
+      id : toDoArr.length + 1,
       title,
       body,
       isDone: false,
