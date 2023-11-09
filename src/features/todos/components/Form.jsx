@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../../../redux/modules/todos.js";
+import { addNumber } from "../../../redux/modules/counter.jsx";
 
 const Form = () => {
   const dispatch = useDispatch();
   const toDoArr = useSelector((state) => state.todos.toDoArr)
   const [title,setTitle] = useState('')
   const [body, setBody] = useState('')
-  const ReduxCounter = useSelector((state) => state.counterSlice.counter);
+  const ReduxCounter = useSelector((state) => state.counter);
   const onChangeTitle = (event) => {
     setTitle(event.target.value)
   }
@@ -24,12 +25,13 @@ const Form = () => {
     if (!title && !body) return;
     
     const newTodo = ({
-      id : toDoArr.length + 1,
+      id : ReduxCounter.counter,
       title,
       body,
       isDone: false,
     });
     dispatch(addTodo(newTodo))
+    dispatch(addNumber())
   
   };
 

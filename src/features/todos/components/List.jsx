@@ -32,7 +32,7 @@ const List = () => {
                   <div>상세보기</div>
                 </StLink>
                 <div>
-                  <h1>{todo.id}</h1>
+                  <h1>ID : {todo.id}</h1>
                   <h2 className="todo-title">{todo.title}</h2>
                   <div>{todo.body}</div>
                 </div>
@@ -67,6 +67,7 @@ const List = () => {
                   <div>상세보기</div>
                 </StLink>
                 <div>
+                  <h1>ID : {todo.id}</h1>
                   <h2 className="todo-title">{todo.title}</h2>
                   <div>{todo.body}</div>
                 </div>
